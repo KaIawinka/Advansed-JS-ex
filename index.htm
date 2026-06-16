@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bejamas</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<header>
+		<nav>
+			<h1>BEJAMAS_</h1>
+			<a href="" id="korzina-link"><img src="./img/Korzina.png" alt="Корзина"></a>
+		</nav>
+		<hr>
+		<div id="korzina">
+			<button id="close">✕</button>
+			<section class="korzina">
+				<div class="korzina-head">
+					<h6>Samurai King Resting</h6>
+					<span>$10000.00</span>
+				</div>
+				<img src="./img/dog.png" alt="Фото дня" class="korzina-photo">
+			</section>
+			<hr>
+			<button id="clear">CLEAR</button>
+		</div>
+	</header>
+
+	<main>
+		<section class="sectionOne">
+			<div class="sectionOne-head">
+				<h3>Samurai King Resting</h3>
+				<button>ADD TO CART</button>
+			</div>
+			<div class="sectionOne-photo">
+				<img src="./img/photo-of-the-day.png" alt="Фото дня" class="photo-of-the-day">
+			</div>
+			<div class="sectionOne-main">
+				<div class="sectionOne-main-one">
+					<h3>About the Samurai King Resting</h3>
+					<h4>Pets</h4>
+					<p>So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely scrambled part of Cicero's De Finibus in order to provide placeholder text to mockup various fonts for a type specimen book.So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely scrambled part of Cicero's De Finibus in order to provide placeholder <br><br> text to mockup various fonts for a type specimen book.So how did the classical Latin become so incoherent? According to McClintock.</p>
+				</div>
+				<div class="sectionOne-main-two">
+					<h3>People also buy</h3>
+					<div>
+						<img src="./img/main-img-1.png" alt="">
+						<img src="./img/main-img-2.png" alt="">
+						<img src="./img/main-img-3.png" alt="">
+					</div>
+					<div>
+						<h4>Details</h4>
+						<ul>
+							<li>Size: 1020x1020 pixel</li>
+							<li>Size: 15mb</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<hr>
+		</section>
+
+
+
+		<section class="sectionTwo">
+			<nav class="sectionTwo-nav">
+				<div class="sectionTwo-nav-one">
+					<h3>Photography / </h3>
+					<h3>Premium Photos</h3>
+				</div>
+				<div class="sectionTwo-nav-two">
+					<button id="filter-link" class="none"></button>
+					<img src="./img/sort.png" alt="sort" class="none">
+					<h3 class="none">Sort By</h3>
+					<h3 class="none">Price</h3>
+					<span class="none">∨</span>
+				</div>
+			</nav>
+
+			<div class="sectionTwo-body">
+
+				<aside id="filter" class="sectionTwo-filter">
+					<h3 class="filter-title">Filter</h3>
+					<button id="filter-close">✕</button>
+
+					<div class="filter-category">
+						<h4>Category</h4>
+						<label><input type="checkbox">People</label>
+						<label><input type="checkbox">Premium</label>
+						<label><input type="checkbox" checked>Pets</label>
+						<label><input type="checkbox" checked>Food</label>
+						<label><input type="checkbox" checked>Landmarks</label>
+						<label><input type="checkbox">Cities</label>
+						<label><input type="checkbox">Nature</label>
+					</div>
+
+					<hr>
+
+					<div class="filter-price">
+						<h4>Price range</h4>
+						<label><input type="checkbox" data-min="0" data-max="20">Lower than $20</label>
+						<label><input type="checkbox" data-min="20" data-max="100">$20 - $100</label>
+						<label><input type="checkbox" data-min="100" data-max="200">$100 - $200</label>
+						<label><input type="checkbox" data-min="200" data-max="999999">More than $200</label>
+					</div>
+
+					<div class="filter-buttons">
+						<button id="filter-clear">CLEAR</button>
+						<button id="filter-save">SAVE</button>
+					</div>
+				</aside>
+
+				<div id="cards" class="sectionTwo-cards"></div>
+
+			</div>
+
+			<div id="pagination" class="sectionTwo-pagination"></div>
+
+		</section>
+	</main>
+
+	<script src="main.js"></script>
+</body>
+</html>
