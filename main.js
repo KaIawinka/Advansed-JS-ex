@@ -148,9 +148,7 @@ const premiumCheck = document.getElementById("premiumCheck");
 const petsCheck = document.getElementById("petsCheck");
 const foodCheck = document.getElementById("foodCheck");
 const beautyCheck = document.getElementById("beautyCheck");
-const citiesCheck = document.getElementById("citiesCheck");
-const natureCheck = document.getElementById("natureCheck");
-
+const furnitureCheck = document.getElementById("furnitureCheck");
 
 
 fragrancesCheck.addEventListener("change", function() {
@@ -178,7 +176,7 @@ premiumCheck.addEventListener("change", function() {
 petsCheck.addEventListener("change", function() {
 	if (petsCheck.checked) {
 		filteredProducts = allProducts.filter(function(product) {
-			return product.tags === "pet supplies";
+			return product.tags[0] === "pet supplies";
 		});
 	} else {
 		filteredProducts = allProducts;
@@ -189,7 +187,7 @@ petsCheck.addEventListener("change", function() {
 foodCheck.addEventListener("change", function() {
 	if (foodCheck.checked) {
 		filteredProducts = allProducts.filter(function(product) {
-			return product.category === "food";
+			return product.category === "groceries";
 		});
 	} else {
 		filteredProducts = allProducts;
@@ -208,21 +206,10 @@ beautyCheck.addEventListener("change", function() {
 	renderPage(1);
 });
 
-citiesCheck.addEventListener("change", function() {
-	if (citiesCheck.checked) {
+furnitureCheck.addEventListener("change", function() {
+	if (furnitureCheck.checked) {
 		filteredProducts = allProducts.filter(function(product) {
-			return product.category === "cities";
-		});
-	} else {
-		filteredProducts = allProducts;
-	}
-	renderPage(1);
-});
-
-natureCheck.addEventListener("change", function() {
-	if (natureCheck.checked) {
-		filteredProducts = allProducts.filter(function(product) {
-			return product.category === "nature";
+			return product.category === "furniture";
 		});
 	} else {
 		filteredProducts = allProducts;
@@ -236,6 +223,8 @@ const priceLower = document.getElementById("priceLower");
 const priceMedium = document.getElementById("priceMedium");
 const priceHigh = document.getElementById("priceHigh");
 const priceVeryHigh = document.getElementById("priceVeryHigh");
+
+
 
 priceLower.addEventListener("change", function() {
 	if (priceLower.checked) {
