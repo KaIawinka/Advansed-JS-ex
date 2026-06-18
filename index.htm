@@ -87,23 +87,23 @@
 
 					<div class="filter-category">
 						<h4>Category</h4>
-						<label><input type="checkbox">People</label>
-						<label><input type="checkbox">Premium</label>
-						<label><input type="checkbox" checked>Pets</label>
-						<label><input type="checkbox" checked>Food</label>
-						<label><input type="checkbox" checked>Landmarks</label>
-						<label><input type="checkbox">Cities</label>
-						<label><input type="checkbox">Nature</label>
+						<label><input type="checkbox" id="fragrancesCheck">Fragrances</label>
+						<label><input type="checkbox" id="premiumCheck">Premium</label>
+						<label><input type="checkbox" id="petsCheck">Pets</label>
+						<label><input type="checkbox" id="foodCheck">Food</label>
+						<label><input type="checkbox" id="beautyCheck">Beauty</label>
+						<label><input type="checkbox" id="citiesCheck">Cities</label>
+						<label><input type="checkbox" id="natureCheck">Nature</label>
 					</div>
 
 					<hr>
 
 					<div class="filter-price">
 						<h4>Price range</h4>
-						<label><input type="checkbox" data-min="0" data-max="20">Lower than $20</label>
-						<label><input type="checkbox" data-min="20" data-max="100">$20 - $100</label>
-						<label><input type="checkbox" data-min="100" data-max="200">$100 - $200</label>
-						<label><input type="checkbox" data-min="200" data-max="999999">More than $200</label>
+						<label><input type="radio" name="price" data-min="0" data-max="20" id="priceLower">Lower than $20</label>
+						<label><input type="radio" name="price" data-min="20" data-max="100" id="priceMedium">$20 - $100</label>
+						<label><input type="radio" name="price" data-min="100" data-max="200" id="priceHigh">$100 - $200</label>
+						<label><input type="radio" name="price" data-min="200" data-max="999999" id="priceVeryHigh">More than $200</label>
 					</div>
 
 					<div class="filter-buttons">

@@ -9,7 +9,7 @@ const filterClose = document.getElementById("filter-close");
 const filterClear = document.getElementById("filter-clear");
 const filterSave = document.getElementById("filter-save");
 const priceInputs = document.querySelectorAll(".filter-price input");
-const CARDS_PER_PAGE = 6;
+const card = 6;
 
 
 
@@ -36,6 +36,7 @@ async function getProducts() {
 	try {
 		const response = await fetch("https://dummyjson.com/products?limit=24");
 		const data = await response.json();
+		console.log(data);
 		allProducts = data.products;
 		filteredProducts = allProducts;
 		renderPage(1);
@@ -46,8 +47,8 @@ async function getProducts() {
 
 function renderPage(page) {
 	currentPage = page;
-	const start = (page - 1) * CARDS_PER_PAGE;
-	const pageProducts = filteredProducts.slice(start, start + CARDS_PER_PAGE);
+	const start = (page - 1) * card;
+	const pageProducts = filteredProducts.slice(start, start + card);
 
 	cardsContainer.innerHTML = "";
 
@@ -73,7 +74,7 @@ function renderPage(page) {
 }
 
 function renderPagination() {
-	const totalPages = Math.ceil(filteredProducts.length / CARDS_PER_PAGE);
+	const totalPages = Math.ceil(filteredProducts.length / card);
 	paginationContainer.innerHTML = "";
 
 	const prev = document.createElement("span");
@@ -139,3 +140,143 @@ filterSave.addEventListener("click", function() {
 });
 
 getProducts();
+
+
+
+const fragrancesCheck = document.getElementById("fragrancesCheck");
+const premiumCheck = document.getElementById("premiumCheck");
+const petsCheck = document.getElementById("petsCheck");
+const foodCheck = document.getElementById("foodCheck");
+const beautyCheck = document.getElementById("beautyCheck");
+const citiesCheck = document.getElementById("citiesCheck");
+const natureCheck = document.getElementById("natureCheck");
+
+
+
+fragrancesCheck.addEventListener("change", function() {
+	if (fragrancesCheck.checked) {
+		filteredProducts = allProducts.filter(function(product) {
+			return product.category === "fragrances";
+		});
+	} else {
+		filteredProducts = allProducts;
+	}
+	renderPage(1);
+});
+
+premiumCheck.addEventListener("change", function() {
+	if (premiumCheck.checked) {
+		filteredProducts = allProducts.filter(function(product) {
+			return product.rating >= 4.5;
+		});
+	} else {
+		filteredProducts = allProducts;
+	}
+	renderPage(1);
+});
+
+petsCheck.addEventListener("change", function() {
+	if (petsCheck.checked) {
+		filteredProducts = allProducts.filter(function(product) {
+			return product.tags === "pet supplies";
+		});
+	} else {
+		filteredProducts = allProducts;
+	}
+	renderPage(1);
+});
+
+foodCheck.addEventListener("change", function() {
+	if (foodCheck.checked) {
+		filteredProducts = allProducts.filter(function(product) {
+			return product.category === "food";
+		});
+	} else {
+		filteredProducts = allProducts;
+	}
+	renderPage(1);
+});
+
+beautyCheck.addEventListener("change", function() {
+	if (beautyCheck.checked) {
+		filteredProducts = allProducts.filter(function(product) {
+			return product.category === "beauty";
+		});
+	} else {
+		filteredProducts = allProducts;
+	}
+	renderPage(1);
+});
+
+citiesCheck.addEventListener("change", function() {
+	if (citiesCheck.checked) {
+		filteredProducts = allProducts.filter(function(product) {
+			return product.category === "cities";
+		});
+	} else {
+		filteredProducts = allProducts;
+	}
+	renderPage(1);
+});
+
+natureCheck.addEventListener("change", function() {
+	if (natureCheck.checked) {
+		filteredProducts = allProducts.filter(function(product) {
+			return product.category === "nature";
+		});
+	} else {
+		filteredProducts = allProducts;
+	}
+	renderPage(1);
+});
+
+
+
+const priceLower = document.getElementById("priceLower");
+const priceMedium = document.getElementById("priceMedium");
+const priceHigh = document.getElementById("priceHigh");
+const priceVeryHigh = document.getElementById("priceVeryHigh");
+
+priceLower.addEventListener("change", function() {
+	if (priceLower.checked) {
+		filteredProducts = allProducts.filter(function(product) {
+			return product.price < 20;
+		});
+	} else {
+		filteredProducts = allProducts;
+	}
+	renderPage(1);
+});
+
+priceMedium.addEventListener("change", function() {
+	if (priceMedium.checked) {
+		filteredProducts = allProducts.filter(function(product) {
+			return product.price >= 20 && product.price <= 100;
+		});
+	} else {
+		filteredProducts = allProducts;
+	}
+	renderPage(1);
+});
+
+priceHigh.addEventListener("change", function() {
+	if (priceHigh.checked) {
+		filteredProducts = allProducts.filter(function(product) {
+			return product.price > 100 && product.price <= 200;
+		});
+	} else {
+		filteredProducts = allProducts;
+	}
+	renderPage(1);
+});
+
+priceVeryHigh.addEventListener("change", function() {
+	if (priceVeryHigh.checked) {
+		filteredProducts = allProducts.filter(function(product) {
+			return product.price > 200;
+		});
+	} else {
+		filteredProducts = allProducts;
+	}
+	renderPage(1);
+});
